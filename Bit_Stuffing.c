@@ -1,7 +1,7 @@
 /*Program to Perform Bit Stuffing
 Example:
-INPUT : 101011111011
-OUTPUT: 0111111010101111101111110
+INPUT : 101011111
+OUTPUT: 01111110|101011111|01111110
 */
 #include <stdio.h>
 #include <string.h>

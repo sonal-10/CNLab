@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <limits.h>
+
 
 #define INT_MAX 9999
-const int nV = 4;
+const int nV = 6;
 
 // Function to find the vertex with the minimum distance
 int minDistance(int distance[], bool shortestPathTree[]) {
@@ -35,8 +35,7 @@ void dijkstra(int graph[nV][nV], int source) {
         shortestPathTree[u] = true;
 
         for (int vertex = 0; vertex < nV; vertex++) {
-            if (!shortestPathTree[vertex] && graph[u][vertex] != 0 && distance[u] != INT_MAX &&
-                distance[u] + graph[u][vertex] < distance[vertex]) {
+            if (!shortestPathTree[vertex] && graph[u][vertex] != 0 && distance[u] != INT_MAX && distance[u] + graph[u][vertex] < distance[vertex]) {
                 distance[vertex] = distance[u] + graph[u][vertex];
             }
         }
@@ -50,24 +49,19 @@ void dijkstra(int graph[nV][nV], int source) {
     }
 }
 
-// Function to get user input for the cost matrix
-void getCostMatrix(int graph[nV][nV]) {
+
+int main() {
+    int graph[nV][nV];
+
+    // Get user input for the cost matrix
     printf("\nEnter the cost matrix\n");
     for (int i = 0; i < nV; i++) {
         for (int j = 0; j < nV; j++) {
             scanf("%d", &graph[i][j]);
         }
     }
-}
-
-int main() {
-    int graph[nV][nV];
-
-    // Get user input for the cost matrix
-    getCostMatrix(graph);
-
-    // Perform Dijkstra's algorithm starting from source vertex 3
-    dijkstra(graph, 3);
+    // Perform Dijkstra's algorithm starting from source vertex 0
+    dijkstra(graph, 0);
 
     return 0;
 }

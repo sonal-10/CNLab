@@ -21,7 +21,7 @@ int main() {
         if(count==5){
             destuff_frame[j++] = stuff_frame[i];
             count = 0;
-            j++;
+            j++; 
             continue;
         }
         destuff_frame[j++] = stuff_frame[i];

@@ -18,10 +18,9 @@ void xor1() {
 
 // Function to perform CRC (Cyclic Redundancy Check)
 void crc() {
-    for (i = 0; i < genlen; i++)
-        cs[i] = msg[i];
-
-    do {
+    for (i = 0; i < genlen; i++)                                                
+        cs[i] = msg[i];                                                
+    do {                                                              
         if (cs[0] == '1') // If the first bit is 1, perform XOR
             xor1();
 
@@ -65,7 +64,7 @@ int main() {
     scanf("%d", &err);
 
     if (err == 1) {
-        // Inserting error for testing error detection
+        // Inserting error for testing error detection 
         do {
             printf("\nEnter the position where error is to be inserted: ");
             scanf("%d", &err);
